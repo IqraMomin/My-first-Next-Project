@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
-    <h1>This is HomePage</h1>
+    <h1>This is Products Store</h1>
   );
 }
