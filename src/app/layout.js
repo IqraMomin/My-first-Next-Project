@@ -20,7 +20,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <header style={{height:"60px", backgroundColor:"antiquewhite",color:"black",textAlign:"center"}}>This is the header of the page.</header>
         {children}
+        <footer style={{position:"fixed",left:"0",bottom:"0",background:"gray",display:"flex"}}>Copyright @2025</footer>
       </body>
     </html>
   );
