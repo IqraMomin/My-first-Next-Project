@@ -1,13 +1,18 @@
 import Link from "next/link";
 
-function ProductsPage() {
-    const arr =[1,2,3,4,5,6,7,8,9,10];
+async function ProductsPage() {
+    const res = await fetch("https://dummyjson.com/products", { next: { revalidate: 60 } });
+    const data = await res.json();
+    const products = data.products;
+
     return (
         <ul>
-           {arr.map(id =>(
-            <li key={id}>
-                <Link href={`/products/${id}`}>Product {id}</Link>
-            </li>
+            {products.map((product) => (
+                <li key={product.id}>
+                    <Link href={`/products/${product.id}`}>
+                        {product.title}
+                    </Link>
+                </li>
             ))}
         </ul>
     )
